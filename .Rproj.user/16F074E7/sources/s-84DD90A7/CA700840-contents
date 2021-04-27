@@ -1,0 +1,62 @@
+---
+title: "BBN Global Seaweed"
+author: "Iona Campbell"
+date: "15/04/2021"
+output:
+   prettydoc::html_pretty:
+    theme: HYPSTR
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(prettydoc)
+```
+\
+\
+\
+
+## Proposed Methods for BBN: From KAP survey, literature and expert opinion
+\
+
+### Suggested flow chart of method 1
+```{r}
+library(DiagrammeR)
+grViz("digraph flowchart {
+      # node definitions with substituted label text
+      node [fontname = Helvetica, shape = rectangle]        
+      tab1 [label = '@@1']
+      tab2 [label = '@@2']
+      tab3 [label = '@@3']
+      tab4 [label = '@@4']
+      tab5 [label = '@@5']
+      tab6 [label = '@@6']
+
+      # edge definitions with the node IDs
+      tab1 -> tab3;
+      tab2 -> tab3;
+      tab3 -> tab4 -> tab5 -> tab6
+      }
+
+      [1]: '1a. HACCP to draft farm system' 
+      [2]: '1b. Root Cause Analysis to draft farm system'
+      [3]: '2. Match variables from literature and questionnaire with nodes in the system'
+      [4]: '3. Use data from literature and questionnaire to build CPT tables for each node'
+      [5]: '4. Define the conceptual model with risk to productivity as outcome'
+      [6]: '5. Validate model with panel of experts'
+      ")
+```
+\
+\
+
+## Data Wrangling for Network Comparison between Philippines and Tanzania
+   
+1. Re-structure data away from KAP scores and list each survey question as a variable (catagorical ordered)
+2. Make two data-sets, so that we can explore a comparison between a network from Philippines and Tanzania
+3. Plot a correlation graph for each dataset: qgraph() function in qgraph)
+   + Find out which variables are positively correlated
+   + Note which ones aren't correlated 
+   
+   
+
+
